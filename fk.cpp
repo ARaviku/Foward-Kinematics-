@@ -6,7 +6,6 @@
 
 Eigen::Matrix3d transform_mat(double q, double l)
 {
-    // --- Your code here
     Eigen::Matrix3d transform_matrix;
     double t_x = l*cos(q);
     double t_y = l*sin(q);
@@ -14,12 +13,10 @@ Eigen::Matrix3d transform_mat(double q, double l)
                  sin(q), cos(q), t_y,
                  0,0, 1;
     return transform_matrix; 
-    // ---
 }
 
 int main(int argc, char* argv[])
 {
-    // by defult, use the file joint_angles.txt, but if you supply a command line argument, use that instead
     std::string input_filename{"joint_angles.txt"};
     if (argc >= 2) {
         input_filename = argv[1];
@@ -39,9 +36,7 @@ int main(int argc, char* argv[])
     {
         double q1, q2, q3;
         ifs >> q1 >> q2 >> q3;
-        
 
-        // --- Your code here
         std:: vector<double> angles;
         angles.push_back(q1);
         angles.push_back(q2);
@@ -63,9 +58,6 @@ int main(int argc, char* argv[])
         std::cout<<std::setprecision(3)<<ans(0,2)<<std::endl;
         std::cout<<std::setprecision(3)<<ans(1,2)<<std::endl;
 
-            
-
-        // ---
     }
 
 }
